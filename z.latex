@@ -1,0 +1,807 @@
+\documentclass[14pt]{article}
+\usepackage{savesym}
+\usepackage{zed-csp}
+\savesymbol{because}
+\usepackage{amssymb}
+\title{Z Notation}
+\setlength{\parindent}{0pt}
+\addtolength{\oddsidemargin}{-.7in}
+\addtolength{\evensidemargin}{-.7in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\begin{document}
+\maketitle
+
+\section{Definitions}
+
+There are many different ways to introduce an object in a Z specification: declarations, abbreviations, axiomatic definitions, and free types. Keep in mind that the only built-type in Z is $\mathbb{Z}$. Other types such as $\nat$ are defined based on $\mathbb{Z}$.\newline
+
+Given a type $X$, we may introduce an element of such type as $x : X$, which is called a signature. We may also supply constraints to a signature: $x : X | x \in \nat \land x < 5$.
+
+\subsection{Declarations}
+
+The declaration $[Type]$ introduces a new basic type called $Type$, which represents a set. We may declare multiple types by separating them by comma: $[Type1, Type2]$.
+
+\subsection{Abbreviations}
+
+An abbreviation introduces a new type in terms of equality of another existing entity. We may replace the abbreviation with the actual value anywhere in the specification.\newline
+
+For example: $Numbers == \nat$, or $ Primary == \{ red, green, blue \} $. In the last example, $red$, $green$, and $blue$ must have been defined elsewhere. If they are elements of set $Colours$, then  $Primary : \power Colours $. Keep in mind that abbreviations should not introduce recursive definitions.\newline
+
+More complex abbreviations can be introduced using set comprehensions:
+
+\begin{zed}
+Even == \{ n: \nat | n \bmod 2 = 0\}
+\end{zed}
+
+Abbreviations may be generic, in which case there will be a set of parameters following the defined symbol. We can define the empty set using a generic abbreviation:
+
+\begin{zed}
+\emptyset[S] == \{ x : S | false \}
+\end{zed}
+
+And then we can talk about the empty set of natural numbers as $\emptyset[\nat]$. Notice that the square brackets are optional (so $\emptyset \nat$ is valid) but may be used for readability purposes.
+
+Z also allows syntax sugar to define infix generic abbreviations. For example: $s \mathbin{rel} t == \power (s \times t)$ is equivalent to: $\mathbin{rel}[s, t] == \power (s \times t)$.
+
+\subsection{Axiomatic Definitions}
+
+These types of definitions come with a constraint predicate. Such definitions are said to be axiomatic, given the predicate must hold whenever the symbol is used. For example, we can define natural numbers as:
+
+\begin{axdef}
+\nat: \power \mathbb{Z}
+\where
+\forall z: \mathbb{Z} @ z \in \nat \iff z \geq 0
+\end{axdef}
+
+The default constraint of an axiomatic definition is $true$, so:
+
+\begin{axdef}
+x : S
+\end{axdef}
+
+Is the same as:
+
+\begin{axdef}
+x : S
+\where
+true
+\end{axdef}
+
+An axiomatic definition can be proved to be consistent with a proof of existence. Given the axiomatic definition $\nat : \power \mathbb{Z}$ from before, we must prove that $\exists \nat : \power \mathbb{Z} @ \forall z: \mathbb{Z} @ z \in \nat \iff z \geq 0 $. That it, that there exists an element that adheres to the definition.\newline
+
+Notice that we can define a boolean functions using an axiomatic definition, in which case making use of the operation involves using the existential operator.
+
+\begin{axdef}
+crowds : \power (\power Person)
+\where
+crowds = \{ p : \power Person | \#s \geq 3 \}
+\end{axdef}
+
+In this case, $\{ John, Jane, Jack \} \in crowds$. However, Z supports syntax sugar to express that an axiomatic definition takes an argument:
+
+\begin{axdef}
+crowds \_ : \power (\power Person)
+\where
+crowds = \{ p : \power Person | \#s \geq 3 \}
+\end{axdef}
+
+And in that case, we can say $crowds (\{ John, Jane, Jack \})$.\newline
+
+Given an axiomatic definition, if more than one set satisfies the constraints, then the definition is \textit{loose}.\newline
+
+Axiomatic definitions may be generic, as long as the generic parameters are sets. For example:
+
+\begin{gendef}[X]
+\power_{1} : \power (\power X)
+\where
+\power_{1} = \{ s : \power X | s \neq \emptyset \}
+\end{gendef}
+
+We may also define an infix operator as a generic axiomatic definition:
+
+\begin{gendef}[X]
+\_ \subseteq \_ : \power X \rel \power X
+\where
+\forall s, t : \power X @ s \subseteq t \iff x \in s \implies y \in s
+\end{gendef}
+
+Since the subset symbol is a generic axiomatic definition, given $X, Y : \power \nat$, we can say $X \subseteq[\nat] Y$, even though the generic parameters are usually obvious from the context.
+
+\subsection{Free Types}
+
+Free types are used to model more complex, and potentially recursive, data structures.\newline
+
+Take the following simple example:
+
+\begin{zed}
+Colours ::= red | green | blue
+\end{zed}
+
+This free type defines both $Colours$ and each of its elements as \textit{different} elements (so $red \neq blue$, $blue \neq green$, etc).
+The ordering of the members in the definition not important.\newline
+
+Free types may use constructor functions. These are injective functions that map from a set of constructor arguments to the free type itself. For example:
+
+\begin{zed}
+MaybeInt ::= nothing | some	\ldata \mathbb{Z} \rdata
+\end{zed}
+
+In this case, $some$ is a constructor function that maps $\mathbb{Z}$ to $MaybeInt$, and we may define elements such as $\mathbin{some}(3) \in MaybeInt$, or $nothing \in MaybeInt$.\newline
+
+Free types can also be recursive by having constructors that take the free type as an argument. For example:
+
+\begin{zed}
+Nat ::= zero | succ \ldata Nat \rdata
+\end{zed}
+
+A free type may have more than one constructor. For example:
+
+\begin{zed}
+Tree ::= leaf | branch \ldata Tree \times Tree \rdata
+\end{zed}
+
+A free type is \textit{consistent} if each of its constructors involves Cartesian products, finite power sets, finite functions, and finite sequences. The following free type is not considered to be consistent:
+
+\begin{zed}
+T ::= c \ldata \power T \rdata
+\end{zed}
+
+\section{Functions}
+
+Z functions fall into the following categories:
+
+\begin{itemize}
+\item $\pfun$ Partial
+\item $\fun$ Total
+\item $\pinj$ Partial, Injective
+\item $\inj$ Total, Injective
+\item $\psurj$ Partial, Surjective
+\item $\surj$ Total, Surjective
+\item $\pinj \hspace{-1.9ex} \twoheadrightarrow$ Partial, Bijective
+\item $\bij$ Total, Bijective
+\end{itemize}
+
+\subsection{Defining Functions}
+
+We may define a function using an axiomatic definition and lambda notation:
+
+\begin{axdef}
+double : \mathbb{Z} \pfun \nat
+\where
+double = \lambda m : \mathbb{Z} | m \in \nat @ m + m
+\end{axdef}
+
+We can also define functions using axiomatic definitions and equivalences:
+
+\begin{gendef}[X]
+\# : \mathbb{F}X \fun \nat
+\where
+\forall s : \mathbb{F}X; n : \nat @ \#s = n \iff \exists f : (1 .. n) \bij s @ true
+\end{gendef}
+
+We can define functions that take more than one arguments by using cartesian products:
+
+\begin{axdef}
+max : (\nat \times \nat) \fun \nat
+\where
+\forall x, y : \nat @ (x < y \implies max(x, y) = y) \land (x \geq y \implies max(x, y) = x)
+\end{axdef}
+
+We can define recursive functions as follows:
+
+\begin{gendef}[X]
+reverse : \seq X \fun \seq X
+\where
+\forall x : \seq X @ \\
+\t1 reverse \langle \rangle = \langle \rangle \land \\
+\t1 reverse (\langle x \rangle \cat s) = (reverse(s)) \cat \langle x \rangle
+\end{gendef}
+
+\subsection{Function Sets}
+
+We may define injections as abbreviations:
+
+\begin{zed}
+A \pinj B == \{ f : A \pfun B | \forall x,y : \mathbin{dom}(f) @ f(x) = f(y) \implies x = y \}\\
+A \inj B == (A \fun B) \cap (A \pinj B)
+\end{zed}
+
+We may also define surjections the same way:
+
+\begin{zed}
+A \psurj B == \{ f : A \pfun B | \mathbin{ran}(f) = B \}\\
+A \surj B == (A \fun B) \cap (A \psurj B)
+\end{zed}
+
+Finally, we can also define bijections using injections and surjections:
+
+\begin{zed}
+A \pinj \hspace{-1.9ex} \twoheadrightarrow B == (A \pinj B) \cap (A \psurj B)\\
+A \bij B == (A \fun B) \cap (A \pinj \hspace{-1.9ex} \twoheadrightarrow B)
+\end{zed}
+
+The set of all finite functions from $A$ to $B$ is denoted $A \ffun B$. The set of all finite injections from $A$ to $B$ is denoted as $A \finj B$, which can be defined as $A \ffun B \cap A \pinj B$.
+
+\section{Schemas}
+
+A schema can be defined inline as $MySchema \defs [ declaration | predicate ]$ or as:
+
+\begin{schema}{MySchema}
+declaration
+\where
+predicate
+\end{schema}
+
+Omitting the predicate has the same result as providing a $true$ predicate. Adding more than one predicate in different lines assumes a conjunction between the predicates.\newline
+
+We may use schemas to define composite data types, similar to structs in certain programming languages. Take the following schema as an example:
+
+\begin{schema}{MySchema}
+a : \mathbb{Z} \\
+c : \power \nat
+\end{schema}
+
+The type $MySchema$ is the set of all possible combinations of the members $a$ and $c$. Given an instance of $MySchema$ called $MyInstance$, we can access its members using dot notation: $MyInstance.a$ and $MyInstance.c$.\newline
+
+Schemas may be generic:
+
+\begin{schema}{MyGenericSchema[X,Y]}
+a : X \\
+c : \power Y
+\end{schema}
+
+And could have then defined $MySchema$ as $MySchema \defs MyGenericSchema[\mathbb{Z},\nat]$.\newline
+
+Schemas may impose constraints. For example:
+
+\begin{schema}{MySchema}
+a : \mathbb{Z} \\
+c : \power \nat
+\where
+a > 5
+\end{schema}
+
+In this case, we can only instantiate $MySchema$ if its member $a$ is greater than 5.\newline
+
+A schema may be used as the declaration part of a lambda expression:
+
+\begin{zed}
+foo == \lambda MySchema @ a^{2}
+\end{zed}
+
+\subsection{Set Comprehensions}
+
+Using a schema in a set comprehension introduces all its members into the scope. Given a schema $MySchema$ with members $a$ and $c$, we can write the following comprehension to return the set of values of $c$ where the instance had $a = 0$:
+
+\begin{zed}
+\{ MySchema | a = 0 @ c \}
+\end{zed}
+
+This is logically the same as:
+
+\begin{zed}
+\{ x : MySchema | x.a = 0 @ x.c \}
+\end{zed}
+
+\subsection{Bindings}
+
+We can instantiate a schema using the concept of bindings. Given the following schema:
+
+\begin{schema}{MySchema}
+a : \nat \\
+b : \nat
+\where
+a < b
+\end{schema}
+
+We can instantiate it as:
+
+\begin{zed}
+instance : MySchema \\
+instance == \lblot a \bind 5, b \bind 7 \rblot
+\end{zed}
+
+The bound variables should match the schema declaration, and the chosen values must obey the schema constraints, if any, otherwise the instantiation is undefined. We say that $a$ is bound to 5, and $b$ is bound to 7.\newline
+
+Given a schema $MySchema$, $\theta MySchema$ represents the \textit{characteristic binding} of $MySchema$. If $MySchema$ contains two declarations: $a$ and $b$, then $\theta MySchema = \lblot a \bind a, b \bind b \rblot$. Basically, we create an instance of $MySchema$ where its $a$ and $b$ obtain the value of the $a$ and $b$ variables in the current scope. If we have $a = 3$ and $b = 5$ on the current scope, then $\theta MySchema = \lblot a \bind 3, b \bind 5 \rblot$.\newline
+
+Notice that all possible instances of $MySchema$ can be expressed as $\{ a : \nat; b : \nat @ \lblot a \bind a, b \bind b \rblot \}$, which is of course the same as $\{ a : \nat; b : \nat @ \theta MySchema \}$, which is in turn equal to $\{ MySchema @ \theta MySchema \}$. This means that a signature such as $p : My Schema$ is just a shortcut for $p \in \{ MySchema @ \theta MySchema \}$. Thus we can say $p$ is a binding that happens to match $MySchema$.
+
+\subsection{Operations}
+
+We can use schemas to model operations. This is done by defining the properties of a state before and after the operation. Consider the following simple schema that defines the state of our system:
+
+\begin{schema}{SystemState}
+x : \mathbb{Z}
+\end{schema}
+
+An operation schema adds the state in the declaration section. A trailing quote describes the state after the operation, and it introduces members with a trailing quote into the scope:
+
+\begin{schema}{Multiply}
+SystemState\\
+SystemState'\\
+\where
+x' = x + x
+\end{schema}
+
+Its considered best practice to also introduce a schema that defines the initial state of the system, by adding constraints over the after state:
+
+\begin{schema}{SystemStateInit}
+SystemState'
+\where
+x' = 0
+\end{schema}
+
+Z includes a couple of shorthands to describe state transformations. $\Delta SystemState$, used to describe state mutations, results in the following schema:
+
+\begin{schema}{\Delta SystemState}
+SystemState\\
+SystemState'
+\end{schema}
+
+Therefore we can re-write our $Multiply$ operation as:
+
+\begin{schema}{Multiply}
+\Delta SystemState
+\where
+x' = x + x
+\end{schema}
+
+Schema operations can define inputs and outputs in the declaration part. Declarations ending with a question sign and with an exclamation sign are considered inputs and outputs, respectively. For example:
+
+\begin{schema}{Add}
+\Delta SystemState \\
+n? : \mathbb{Z} \\
+r! : \mathbb{Z}
+\where
+x' = x + n? \\
+r! = x'
+\end{schema}
+
+Given $SystemState$ in the scope, we may use $\theta SystemState$ and $\theta SystemState'$ to refer to the combination of state values before or after the operation. We can exploit this to define $\Xi SystemState$, which looks like this:
+
+\begin{schema}{\Xi SystemState}
+\Delta SystemState
+\where
+\theta SystemState' = \theta SystemState
+\end{schema}
+
+This is useful to define operations that don't mutate the system state, as it concisely states that all the members of the state schema should remain the same after applying the operation. For example:
+
+\begin{schema}{GetValue}
+\Xi SystemState \\
+r! : \mathbb{Z}
+\where
+r! = x
+\end{schema}
+
+If an operation schema doesn't constraint the states it can be applied to, then its considered to be a total operation. Otherwise its considered to be a partial operation.
+
+\subsection{Normalization}
+
+Normalization is the process of rewriting a schema such that all the constraint information appears in the predicate part. This might require recursively normalizing other required schemas. For example, consider the following schemas:
+
+\begin{schema}{S}
+a : \nat \\
+b : \nat
+\where
+a \neq b
+\end{schema}
+
+\begin{schema}{T}
+S \\
+c : \nat
+\where
+b \neq c
+\end{schema}
+
+\begin{schema}{Increment}
+\Delta T \\
+in? : \nat \\
+out! : \nat
+\where
+a' = a + in?\\
+b' = b \\
+c' = c \\
+out! = c \\
+b \neq c \\
+\end{schema}
+
+The normalized form of $Increment$ looks like this:
+
+\begin{schema}{Increment}
+a, b, c, a', b', c' : \mathbb{Z} \\
+in? : \mathbb{Z} \\
+out! : \mathbb{Z}
+\where
+a \geq 0 \land b \geq 0 \land c \geq 0 \\
+a' \geq 0 \land b' \geq 0 \land c' \geq 0 \\
+in? \geq 0 \\
+out! \geq 0 \\
+a' = a + in?\\
+b' = b \\
+c' = c \\
+out! = c \\
+a \neq b \\
+a' \neq b' \\
+b \neq c \\
+b' \neq c'
+\end{schema}
+
+Notice we replaced $\nat$ with $\mathbb{Z}$ as the latter is the only built-in number type in Z.
+
+\subsection{Schema Calculus}
+
+We can manipulate schemas in different ways using logical operators. Keep in mind that is always necessary to normalize the schemas before attempting any of these operations.\newline
+
+A conjunction between two schemas is calculated by merging the declarations and making a conjunction of the predicates. Conjunction is undefined if there a conflict in the declarations part. For example, given the following schemas:
+
+\begin{schema}{Foo}
+a : \mathbb{Z}
+\where
+a > 5
+\end{schema}
+
+\begin{schema}{Bar}
+a : \mathbb{Z} \\
+b : \mathbb{Z}
+\where
+a < 30 \lor b = 4
+\end{schema}
+
+The conjunction $Foo \land Bar$ equals:
+
+\begin{schema*}
+a : \mathbb{Z} \\
+b : \mathbb{Z}
+\where
+(a > 5) \land (a < 30 \lor b = 4)
+\end{schema*}
+
+Disjunctions work the same way, except that we join the predicates using a disjunction. Given the above schemas, $Foo \lor Bar$ equals:
+
+\begin{schema*}
+a : \mathbb{Z} \\
+b : \mathbb{Z}
+\where
+a > 5 \lor a < 30 \lor b = 4
+\end{schema*}
+
+Negation works by simply negating the normalized predicate. $\lnot Bar$ equals:
+
+\begin{schema*}
+a : \mathbb{Z} \\
+b : \mathbb{Z}
+\where
+\lnot (a < 30 \lor b = 4)
+\end{schema*}
+
+\subsection{Quantification}
+
+Consider the following schema:
+
+\begin{schema}{MySchema}
+p : \nat \\
+q : \power \nat
+\where
+p \in q
+\end{schema}
+
+Given using a schema introduces its members to the current scope, we can use this schema in quantifier expressions as follows:
+
+\begin{zed}
+\exists MySchema @ b = 4\\
+\forall MySchema @ c > a
+\end{zed}
+
+We can also use it as a quantifier constraint:
+
+\begin{zed}
+\forall p : \nat; q : \power \nat | MySchema
+\end{zed}
+
+The above example will be true if all possible combinations of $p$ and $q$ match the constraints imposed by $MySchema$.\newline
+
+Using a schema as a partial quantifier constraint results in a new schema. Given $MySchema$, $\forall q : \power \nat @ MySchema$ is the same as:
+
+\begin{schema*}
+p : \nat
+\where
+\forall q : \power \nat @ p \in q
+\end{schema*}
+
+And $\exists q : \power \nat @ MySchema$ is the same as:
+
+\begin{schema*}
+p : \nat
+\where
+\exists q : \power \nat @ p \in q
+\end{schema*}
+
+Notice we keep every non-quantified declaration, and move the quantification to the constraint area, replacing the mention of $MySchema$ with any actual constraint.\newline
+
+Keep in mind that a lot of times an existential quantifier can be eliminated by using the one-point rule.
+
+\subsection{Renaming}
+
+This is a useful feature, based on substitutions, to rename properties of schemas. Take the following schema as an example:
+
+\begin{schema}{MySchema}
+p : \nat \\
+q : \power \nat
+\where
+p \in q
+\end{schema}
+
+We can rename $p$ to $x$ and $q$ to $y$ by saying $MyNewSchema \defs MySchema[x / p, y / q]$, which results in the following schema:
+
+\begin{schema}{MyNewSchema}
+x : \nat \\
+y : \power \nat
+\where
+x \in y
+\end{schema}
+
+Notice the resulting schema, even though only renaming took place, is considered to be different, so comparing  $MySchema$ and $MyNewSchema$ is an undefined operation.
+
+\subsection{Hiding}
+
+Hiding is a powerful mechanism for schema abstraction. We can use it to "hide" elements of the declaration part that are not required at the current level of specification.\newline
+
+For example, consider the following schema:
+
+\begin{schema}{MySchema}
+a : \nat \\
+b : \nat
+\where
+P
+\end{schema}
+
+We can hide $a$ as $MySchema \setminus \{a\}$, which is equal to $\exists a : \nat @ MySchema$:
+
+\begin{schema*}
+b : \nat
+\where
+\exists a : \nat @ P
+\end{schema*}
+
+Note the close relationship between hiding and schema existential quantification.
+
+\subsection{Composition}
+
+We can think of schema operations as relations between states of the system. Given a state $State$ and two operations $Operation1$ and $Operation2$ that operate on $State$, we can introduce a temporary version of the state called $State''$. Then, if $Operation1$ and $Operation2$ are composed, the result is an operation that maps from $State$ to $State''$, and then from $State''$ to $State'$, where $State''$ is hidden.\newline
+
+More formally, if our operations mutate a state containing $a$ and $b$, then:
+
+\begin{zed}
+Operation1 \comp Operation 2 = \\
+\t1 (Operation1[a'' / a', b'' / b'] \land Operation2[a'' / a, b'' / b]) \setminus \{ a'', b'' \}
+\end{zed}
+
+Basically, we rename the \textit{after} state of $Operation1$ to be the intermediary state, then rename the \textit{before} state of $Operation2$ to be the intermediary state, conjunct both schemas, and then hide the intermediary state.
+
+\subsection{Promotion}
+
+Promotion, or framing, is a structuring technique to reduce the specification complexity when modeling operations on a single data type, that take a composite type as an input. For example, given a sequence of complex types and an operation on a single complex type, promotion allows us to define the same operation that acts on a single complex type taking the sequence as an input.\newline
+
+Consider the following schemas:
+
+\begin{schema}{Data}
+value: Value
+\end{schema}
+
+\begin{schema}{Array}
+array: \seq Data
+\end{schema}
+
+And an operation on $Data$:
+
+\begin{schema}{AssignData}
+\Delta Data \\
+new? : Value
+\where
+value' = new?
+\end{schema}
+
+We can write the following schema to \textit{promote} $AssignData$ to work on $Array$:
+
+\begin{schema}{AssignDataPromote}
+\Delta Array \\
+\Delta Data \\
+index? : \nat
+\where
+index? \in dom(array) \\
+\{ index? \} \ndres array = \{ index? \} \ndres array' \\
+array(index?) = \theta Data \\
+array'(index?) = \theta Data'
+\end{schema}
+
+The first constraint ensures that the given index is valid, and exists in the array. The second constraint ensures the elements on the array other than the specified one will remain the same. The remaining constraints state that the element at $index?$ will follow the transformations made to $\Delta Data$.\newline
+
+Notice the promotion schema only specifies the relation between the transformation of a single data element and the transformation of an array of such data elements. The idea is to then calculate $AssignDataPromote \land AssignData$:
+
+\begin{schema*}
+\Delta Array \\
+\Delta Data \\
+index? : \nat \\
+new? : Value
+\where
+index? \in dom(array) \\
+\{ index? \} \ndres array = \{ index? \} \ndres array' \\
+array(index?) = \theta Data \\
+array'(index?) = \theta Data' \\
+value' = new?
+\end{schema*}
+
+And then hide $\Delta Data$, as the user is not expected to pass it directly:
+
+\begin{schema*}
+\Delta Array \\
+index? : \nat \\
+new? : Value
+\where
+\exists \Delta Data @ \\
+\t1 index? \in dom(array) \land \\
+\t1 \{ index? \} \ndres array = \{ index? \} \ndres array' \land \\
+\t1 array(index?) = \theta Data \land \\
+\t1 array'(index?) = \theta Data' \land \\
+\t1 value' = new?
+\end{schema*}
+
+The resulting schema is effectively a promoted version of $AssignData$.\newline
+
+In conclusion, a promoted operation is defined as $\exists \Delta Local @ LocalOperation \land Promote$.\newline
+
+Promotions might be \textit{free} or \textit{constrained}. A promotion is said to be free if the promotion schema satisfies the following statement:
+
+\begin{zed}
+(\exists Local' @ \exists Global' @ Promote) \implies (\forall Local' @ \exists Global' @ Promote)
+\end{zed}
+
+Which basically means: "given that the update is possible at all, it is possible for all outcomes of the local state". This is satisfied if neither the promotion schema nor the global state definitions place any additional constraint upon the component variables of the local state schema.
+
+\subsection{Preconditions}
+
+Given an operation $MyOperation$, $\pre MyOperation$ refers to the (different) schema that consists of $MyOperation$ minus any outputs and components that correspond to the state after the operation:
+
+\begin{zed}
+\pre MyOperation = \exists State' @ MyOperation \setminus outputs
+\end{zed}
+
+The recipe to calculate these precondition schemas is:
+
+\begin{itemize}
+  \item Expand any required schemas, $\Delta$, $\Xi$, etc from the schema declaration
+  \item Divide the declaration into 3 parts: before (including inputs), after (including outputs), and everything else
+\end{itemize}
+
+The precondition is then:
+
+\begin{schema*}
+Before
+\where
+\exists After @ Predicate
+\end{schema*}
+
+Given the following schemas:
+
+\begin{schema}{S}
+a, b : \nat \\
+\where
+a \neq b
+\end{schema}
+
+\begin{schema}{T}
+S \\
+c : \nat
+\where
+b \neq c
+\end{schema}
+
+\begin{schema}{Increment}
+\Delta T \\
+in?, out! : \nat \\
+\where
+a' = a + in?\\
+b' = b \\
+c' = c \\
+out! = c \\
+b \neq c \\
+\end{schema}
+
+We first need to expand $Increment$:
+
+\begin{schema}{Increment}
+a, b, c, a', b', c', in?, out!: \nat \\
+\where
+a' = a + in?\\
+b' = b \\
+c' = c \\
+out! = c \\
+a \neq b \land a' \neq b' \\
+b \neq c \land b' \neq c' \\
+\end{schema}
+
+Then we should divide the declaration into 3 parts (2 in this case):
+
+\begin{schema*}
+a, b, c, in?: \nat \\
+\also
+a', b', c', out!: \nat \\
+\end{schema*}
+
+Then we should hide the \textit{after} part of the schema:
+
+\begin{schema*}
+a, b, c, in? : \nat \\
+\where
+\exists a', b', c', out! \in \nat @ \\
+\t1 a' = a + in?\\
+\t1 b' = b \\
+\t1 c' = c \\
+\t1 out! = c \\
+\t1 a \neq b \land a' \neq b' \\
+\t1 b \neq c \land b' \neq c' \\
+\end{schema*}
+
+We can now simplify the quantified definition using the one-point rule:
+
+\begin{schema*}
+a, b, c, in? : \nat \\
+\where
+b \neq a + in? \\
+b \neq c
+\end{schema*}
+
+And we can finally reintroduce $T$ into the declaration, and we will get the final precondition schema:
+
+\begin{schema*}
+T \\
+in? : \nat
+\where
+b \neq a + in?
+\end{schema*}
+
+Its common practice to create tables to store the preconditions of every operation in a specification, for convenience.\newline
+
+Notice the precondition operator distributes over $\lor$:
+
+\begin{zed}
+Op \defs Op_1 \lor Op_2 \implies \pre Op = \pre Op_1 \lor \pre Op_2
+\end{zed}
+
+But it does not distribute over $\land$.\newline
+
+Under a \textit{free promotion}, the precondition of a global operation is the conjunction of the precondition of the local operation and the precondition of the promotion:
+
+\begin{zed}
+\pre Global = \pre Local \land \pre Promotion
+\end{zed}
+
+ In the case of a \textit{constrained promotion}, the precondition of a global operation is the precondition of the conjunction of the local operation and the promotion:
+
+\begin{zed}
+\pre Global = \pre (Local \land Promotion)
+\end{zed}
+
+\subsection{Consistency}
+
+Every time we define a particular state, such as $SystemStateInit$, the starting point of $SystemState$, we must prove its consistency by showing that there is a set of bindings that adhere to the schema. This is called the \textit{initialization theorem} for a data type. In this case, we must prove that:
+
+\begin{zed}
+\exists SystemState' @ SystemStateInit
+\end{zed}
+
+In order to prove that a specification is consistent, we must prove the initialization theorem for each data type, and calculate the preconditions of each operation.
+
+\section{Refinement}
+
+Refinement is the process of developing a specification in such a way that it leads us towards a suitable implementation. \newline
+
+This is done by starting with a high-level specification, and then re-writing the schemas to use data structures that start resembling data structures used in real programming languages, checking that the new schemas are consistent with their previous high-level versions. Several refinement steps may be performed to approach executable code.\newline
+
+For example, we may start defining our system state using mathematical sets. After a refinement round, we might switch to sequences (and therefore reimplement all operations based on this new data structure), that more closely resemble arrays.
+
+\end{document}

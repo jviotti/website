@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>${title}</title>
+    <link rel="canonical" href="https://www.jviotti.com">
+    <meta name="description" content="${description}">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:profile:first_name" content="Juan Cruz">
+    <meta property="og:profile:last_name" content="Viotti">
+    <meta property="og:profile:gender" content="male">
+    <meta property="og:site_name" content="${title}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:url" content="https://www.jviotti.com">
+    <meta property="og:image" content="https://www.jviotti.com/${image}">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="stylesheet" href="style.min.css" type="text/css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="alternate" type="application/rss+xml" href="feed.xml" title="RSS Feed">
+
+    {{ANALYTICS}}
+  </head>
+  <body id="landing">
+    {{NAVIGATION}}
+
+    <div class="container mt-5">
+      <header class="text-center mb-5">
+        <img class="rounded-circle img-thumbnail mb-3" width="160" src="me.jpg" alt="A picture of Juan Cruz Viotti">
+        <h1 class="fw-bold display-4">${title}</h1>
+        <p class="lead">Hey there! I'm a Technical Lead and Engineering Manager at <a href="https://www.postman.com" rel="noopener" target="_blank">Postman</a> focusing on cross-platform desktop software, and a graduate student at University of Oxford working on the <a href="https://www.jsonbinpack.org?utm_source=jviotti">JSON BinPack</a> space-efficient serialization format.</p>
+        <small class="text-secondary">95D8 0C8B 766F 2587 2A81 0935 9FB1 5665 AD73 D9B7</small>
+      </header>
+
+      <div class="mb-5">
+        {{BOOK}}
+      </div>
+
+      ${body}
+
+      <footer class="text-center mb-5">
+        <hr>
+        <p>Copyright Juan Cruz Viotti © 2016-2023 • All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

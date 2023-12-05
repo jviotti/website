@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="date" content='${date-meta}'>
+    <title>${title}</title>
+    <meta name="description" content="${description}">
+
+    <meta property="og:title" content="${title}">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.jviotti.com/images/${image}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:url" content="https://www.jviotti.com/${url}">
+    <meta property="og:site_name" content="Juan Cruz Viotti">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="stylesheet" href="../../../style.min.css" type="text/css">
+    <link rel="icon" href="../../../favicon.ico" sizes="any">
+    <link rel="icon" href="../../../icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../../../manifest.webmanifest">
+    <link rel="alternate" type="application/rss+xml" href="../../../feed.xml" title="RSS Feed">
+
+    {{ANALYTICS}}
+  </head>
+  <body>
+    {{NAVIGATION}}
+
+    <main class="container">
+      <article>
+        <header>
+          <h1 class="fw-bold">${title}</h1>
+          <time class="text-secondary" datetime="${date-meta}">${date}</time>
+          <hr>
+        </header>
+
+        <div id="toc">${toc}</div>
+
+        ${body}
+      </article>
+
+      <footer class="my-5">
+        <hr>
+        {{BOOK}}
+        <hr>
+        <p>Comments? Drop me a line at <a href="mailto:${email}">${email}</a></p>
+      </footer>
+    </main>
+  </body>
+</html>
