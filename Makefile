@@ -14,7 +14,6 @@ PYTHON ?= python3
 define INVOKE_PANDOC
 $(PANDOC) \
 	--standalone \
-	--sandbox \
 	--mathml \
 	--table-of-contents \
 	--metadata email=jv@jviotti.com \

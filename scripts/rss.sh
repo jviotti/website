@@ -21,8 +21,15 @@ assert() {
   fi
 }
 
+UNAME="$(uname)"
+
 parse_date() {
-  date -jf "%B %d, %Y" "$1" "+%a, %d %b %Y %H:%M:%S %z"
+  if [ "$UNAME" = "Darwin" ]
+  then
+    date -jf "%B %d, %Y" "$1" "+%a, %d %b %Y %H:%M:%S %z"
+  else
+    date -d "$1" "+%a, %d %b %Y %H:%M:%S %z"
+  fi
 }
 
 echo '<?xml version="1.0" encoding="UTF-8"?>'
@@ -59,10 +66,13 @@ do
   assert "$DESCRIPTION" "Missing description: $entry"
   assert "$DATE" "Missing date: $entry"
 
+  TIMESTAMP="$(parse_date "$DATE")"
+  assert "$TIMESTAMP" "Could not parse date: $DATE"
+
   echo '    <item>'
   echo "      <title>$TITLE</title>"
   echo "      <description>$DESCRIPTION</description>"
-  echo "      <pubDate>$(parse_date "$DATE")</pubDate>"
+  echo "      <pubDate>$TIMESTAMP</pubDate>"
   echo "      <link>$URL</link>"
   echo "      <guid isPermaLink=\"true\">$URL</guid>"
   echo '    </item>'
