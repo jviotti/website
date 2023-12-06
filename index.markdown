@@ -51,6 +51,10 @@ Research
 Videos
 ------
 
+- 2023 (Live Stream) [Creativity & problem solving with AlphaZero, Tom Zahavy](https://www.youtube.com/watch?v=8UzeBdnpGcc)
+- 2023 (Live Stream) [Venturing from Spreadsheets to Startups: The journey of venture capitalist Heidi Roizen](https://www.youtube.com/watch?v=Qm6Vj5pN03U)
+- 2023 (Live Stream) [On collective intelligence, academic publishing, and programmable biology](https://www.youtube.com/watch?v=95VvXSOAjB8)
+- 2023 (Live Stream) [An interview with Fanny Sie about open science networks](https://www.youtube.com/watch?v=YXn0p1ZqB6s)
 - 2023 (Live Stream) [Going beyond JavaScript and Actor-Based Programming: an Interview with Douglas Crockford](https://www.youtube.com/watch?v=VwisE497Nsg)
 - 2022 (Presentation) [A Day in the Life of a Software Engineer](https://www.youtube.com/watch?v=-YIc_kxZ5kk)
   ([Slides](https://www.dropbox.com/s/is92eioihj5nv8s/2022%20-%20A%20Day%20in%20the%20Life%20of%20a%20Software%20Engineer.pdf?dl=0))
