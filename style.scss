@@ -127,7 +127,7 @@ article math {
 // LANDING PAGE
 /////////////////////////////////////////////////
 
-#landing h2 {
+#landing .container > h2 {
   @extend .fw-bold;
   @extend .mt-4;
   @extend .mb-4;
