@@ -64,8 +64,8 @@ $(eval $(call STATIC,dissertation.pdf))
 $(eval $(call STATIC,NoStoryboards.zip))
 $(eval $(call STATIC,NoStoryboardsCMake.zip))
 $(eval $(call STATIC,z.pdf))
-$(eval $(call STATIC,me.jpg))
-$(eval $(call STATIC,cover.png))
+$(eval $(call STATIC,me.webp))
+$(eval $(call STATIC,cover.webp))
 
 # Images
 $(eval $(call IMAGE,generic.jpg))

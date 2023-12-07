@@ -1,7 +1,7 @@
 ---
 title: "Juan Cruz Viotti"
 description: "Juan Cruz Viotti's personal website, which contains articles, research, videos, notes, and more"
-image: "me.jpg"
+image: "me.webp"
 ---
 
 Articles
