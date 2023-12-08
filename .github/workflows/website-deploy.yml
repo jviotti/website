@@ -23,7 +23,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: sudo apt update
-      - run: sudo apt install -y pandoc imagemagick sassc imagemagick
+      - run: sudo apt install -y imagemagick sassc imagemagick
+
+      # The pandoc version shipped with Ubuntu leads to broken codeblocks
+      - run: wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
+      - run: sudo dpkg -i pandoc-2.19.2-1-amd64.deb
+
       - run: make build
       - name: Setup Pages
         uses: actions/configure-pages@v1
