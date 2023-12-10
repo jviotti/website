@@ -20,6 +20,10 @@ This is a list of books I read, sorted by publication date:
   Edition](https://crascit.com/professional-cmake/) by Craig Scott
 - [(2021) API By Design](https://smizell.gumroad.com/l/apibydesign) by Stephen
   Mizell
+- [(2020) Programming with 64-Bit ARM Assembly Language: Single Board Computer
+  Development for Raspberry Pi and Mobile
+  Devices](https://www.amazon.com/Programming-64-Bit-ARM-Assembly-Language/dp/1484258800)
+  by Stephen Smith
 - [(2020) Swift Programming: The Big Nerd Ranch Guide, 3rd
   Edition](https://www.amazon.com/Swift-Programming-Ranch-Guide-Guides/dp/0135264200)
   by Mikey Ward, Matthew Mathias, John Gallagher
