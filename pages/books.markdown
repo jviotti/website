@@ -109,6 +109,10 @@ This is a list of books I read, sorted by publication date:
 - [(2015) Practical Vim: Edit Text at the Speed of Thought, 2nd
   Edition](https://www.amazon.com/Practical-Vim-Edit-Speed-Thought/dp/1680501275)
   by Drew Neil
+- [(2014) Roadside MBA: Back Road Lessons for Entrepreneurs, Executives and
+  Small Business
+  Owners](https://www.amazon.com/Roadside-MBA-Entrepreneurs-Executives-Business/dp/1455598895)
+  by Michael Mazzeo, Paul Oyer, Scott Schaefer
 - [(2014) Learning Cocoa with Objective-C: Developing for the Mac and iOS App
   Stores 4th
   Edition](https://www.amazon.com/Learning-Cocoa-Objective-C-Developing-Stores/dp/149190139X)
