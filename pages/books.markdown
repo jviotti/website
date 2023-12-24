@@ -464,6 +464,10 @@ This is a list of books I read, sorted by publication date:
 - [(2007) The 4-Hour Workweek: Escape 9-5, Live Anywhere, and Join the New
   Rich](https://www.amazon.com/4-Hour-Workweek-Escape-Live-Anywhere/dp/0307353133)
   by Timothy Ferris
+- [(2006) Debugging: The 9 Indispensable Rules for Finding Even the Most
+  Elusive Software and Hardware
+  Problems](https://www.amazon.com/exec/obidos/ASIN/0814474578/debuggingrule-20)
+  by David J Agans
 - [(2006) Refactoring Databases: Evolutionary Database
   Design](https://www.amazon.com/Refactoring-Databases-Evolutionary-paperback-Addison-Wesley/dp/0321774515)
   by Scott J Ambler, Pramod J. Sadalage
