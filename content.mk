@@ -1,5 +1,6 @@
 # Articles
 # Order is important for RSS feed generation purposes. Latest first.
+$(eval $(call ARTICLE,2024,01,05,is-objective-c-bool-a-boolean-type-it-depends))
 $(eval $(call ARTICLE,2023,12,01,understanding-objective-c-by-transpiling-it-to-cpp))
 $(eval $(call ARTICLE,2023,11,22,spoofing-objective-c-return-values-on-apple-silicon-using-lldb))
 $(eval $(call ARTICLE,2023,11,20,exploring-macos-private-frameworks))
@@ -117,3 +118,4 @@ $(eval $(call IMAGE,travis-ci-secure-environment-variables.png))
 $(eval $(call IMAGE,vs_installer_nickname.png))
 $(eval $(call IMAGE,vs_layout.png))
 $(eval $(call IMAGE,xcode-developer-documentation.png))
+$(eval $(call IMAGE,objc-bool.png))
