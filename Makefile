@@ -16,6 +16,7 @@ $(PANDOC) \
 	--standalone \
 	--mathml \
 	--table-of-contents \
+	--toc-depth 4 \
 	--metadata email=jv@jviotti.com \
 	--from markdown \
 	--to html5 \
