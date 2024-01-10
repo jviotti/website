@@ -576,3 +576,6 @@ legacy reasons.
 > corners](https://bignerdranch.com/blog/bools-sharp-corners/) by the Big Nerd
 > Ranch, and Google's [Objective-C
 > Styleguide](https://google.github.io/styleguide/objcguide.html#bool-pitfalls).
+
+**HN Discussion**:
+[https://news.ycombinator.com/item?id=38909377](https://news.ycombinator.com/item?id=38909377).
