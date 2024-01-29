@@ -7,6 +7,7 @@ image: "me.webp"
 Articles
 --------
 
+- 2024 [Using Xcode Instruments for C++ CPU profiling](2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html)
 - 2024 [Is Objective-C `BOOL` a boolean type? It depends](2024/01/05/is-objective-c-bool-a-boolean-type-it-depends.html)
 - 2023 [Understanding Objective-C by transpiling it to C++](2023/12/01/understanding-objective-c-by-transpiling-it-to-cpp.html)
 - 2023 [Spoofing Objective-C return values on Apple Silicon using LLDB](2023/11/22/spoofing-objective-c-return-values-on-apple-silicon-using-lldb.html)
