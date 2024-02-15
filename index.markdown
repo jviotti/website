@@ -35,6 +35,7 @@ Articles
 
 **External**
 
+- 2024 [Understanding JSON Schema Lexical and Dynamic Scopes](https://json-schema.org/blog/posts/understanding-lexical-dynamic-scopes)
 - 2023 [How Postman uses JSON Schema](https://blog.postman.com/how-postman-uses-json-schema/)
 - 2022 [How the W3C Web of Things brings JSON Schema to the Internet of Things](https://json-schema.org/blog/posts/w3c-wot-case-study)
 - 2022 [An Overview of the Current State of Node.js Single Executable Applications](https://github.com/nodejs/single-executable/blob/380024591cb3304b4f701af03270197760a26ef2/blog/2022-08-05-an-overview-of-the-current-state.md)
