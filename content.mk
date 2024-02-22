@@ -1,5 +1,6 @@
 # Articles
 # Order is important for RSS feed generation purposes. Latest first.
+$(eval $(call ARTICLE,2024,01,29,using-xcode-instruments-for-cpp-cpu-profiling))
 $(eval $(call ARTICLE,2024,01,05,is-objective-c-bool-a-boolean-type-it-depends))
 $(eval $(call ARTICLE,2023,12,01,understanding-objective-c-by-transpiling-it-to-cpp))
 $(eval $(call ARTICLE,2023,11,22,spoofing-objective-c-return-values-on-apple-silicon-using-lldb))
@@ -119,3 +120,16 @@ $(eval $(call IMAGE,vs_installer_nickname.png))
 $(eval $(call IMAGE,vs_layout.png))
 $(eval $(call IMAGE,xcode-developer-documentation.png))
 $(eval $(call IMAGE,objc-bool.png))
+$(eval $(call IMAGE,instruments-from-xcode.png))
+$(eval $(call IMAGE,instruments-landing-cpu-profiling.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-brendan-gregg-grep.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-brendan-gregg-after-recording.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-concatenate-strings.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-operator-plus.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-top-functions-checkbox.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-top-functions.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-program-code.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-std-code.png))
+$(eval $(call IMAGE,instruments-cpu-profiler-string-concat-heaviest-stack-trace.png))
+
