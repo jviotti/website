@@ -54,6 +54,7 @@ Research
 Videos
 ------
 
+- 2024 (Webinar) [Demystifying Data Products](https://info.zeenea.com/demystifying-data-products-how-to-design-publish-and-share-data-products/)
 - 2024 (Live Stream) [DM Radio - All Together Now - Unified Analytics](https://www.youtube.com/watch?v=ne2fNU1iVPY)
 - 2023 (Live Stream) [Creativity & problem solving with AlphaZero, Tom Zahavy](https://www.youtube.com/watch?v=8UzeBdnpGcc)
 - 2023 (Live Stream) [Venturing from Spreadsheets to Startups: The journey of venture capitalist Heidi Roizen](https://www.youtube.com/watch?v=Qm6Vj5pN03U)
