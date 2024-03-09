@@ -61,6 +61,9 @@ This is a list of books I read, sorted by publication date:
   Reliable
   Services](https://www.amazon.com/Designing-Distributed-Systems-Patterns-Paradigms/dp/1491983647)
   by Brendan Burns
+- [(2017) TED Talks: The Official TED Guide to Public
+  Speaking](https://www.amazon.com/TED-Talks-Official-Public-Speaking/dp/1328710289)
+  by Chris Anderson
 - [(2017) SQL Antipatterns: Avoiding the Pitfalls of Database
   Programming](https://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557)
   by Bill Karwin
