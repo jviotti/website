@@ -4,6 +4,10 @@ description: "Juan Cruz Viotti's personal website, which contains articles, rese
 image: "me.webp"
 ---
 
+*Can my expertise help? I'm available for consulting on topics including C++,
+CMake, macOS, JSON Schema, software architecture, and data. Don't hesitate in
+[reaching out](mailto:jv@jviotti.com) to discuss further.*
+
 Articles
 --------
 
