@@ -6,8 +6,4 @@
   r partials/book.html
 }
 
-/{{ANALYTICS}}/ {
-  r partials/analytics.html
-}
-
 s/{{.*}}//g

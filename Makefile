@@ -85,7 +85,6 @@ dist/out/style.min.css: style.scss | dist/out
 dist/templates/%.html: scripts/partials.sed templates/%.in.html \
 	partials/navigation.html \
 	partials/book.html \
-	partials/analytics.html \
 	| dist/templates
 	$(SED) -f $< $(word 2,$^) > $@
 dist/out/icon-192x192.png: static/icon.svg | dist/out
