@@ -5,6 +5,10 @@ description: The ever-growing list of books I read
 
 This is a list of books I read, sorted by publication date:
 
+- [(2024) The Developer Facing Startup: Alchemist Accelerator's go-to-market
+  playbook for early-stage developer-facing
+  startups](https://www.amazon.com/Developer-Facing-Startup-market-developer-facing/dp/B0D4KGHQML)
+  by Adam Frankl
 - [(2023) Advanced Apple Debugging & Reverse Engineering, 4th
   Edition](https://www.kodeco.com/books/advanced-apple-debugging-reverse-engineering/v4.0)
   by Walter Tyree
