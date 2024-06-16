@@ -67,7 +67,6 @@ Videos
 - 2023 (Live Stream) [An interview with Fanny Sie about open science networks](https://www.youtube.com/watch?v=YXn0p1ZqB6s)
 - 2023 (Live Stream) [Going beyond JavaScript and Actor-Based Programming: an Interview with Douglas Crockford](https://www.youtube.com/watch?v=VwisE497Nsg)
 - 2022 (Presentation) [A Day in the Life of a Software Engineer](https://www.youtube.com/watch?v=-YIc_kxZ5kk)
-  ([Slides](https://www.dropbox.com/s/is92eioihj5nv8s/2022%20-%20A%20Day%20in%20the%20Life%20of%20a%20Software%20Engineer.pdf?dl=0))
 - 2022 (Discussion) [Node.js SEA at OpenJS Foundation Collaborator Summit](https://www.youtube.com/watch?v=qSgxjN53WyA)
 - 2022 (Live Stream) [How Postman Engineering is using Electron](https://www.youtube.com/watch?v=0g3OEYw6TTE)
 - 2017 (Course) [Building Electron Applications](https://www.udemy.com/building-electron-applications/)
