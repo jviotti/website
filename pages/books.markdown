@@ -9,6 +9,10 @@ This is a list of books I read, sorted by publication date:
   playbook for early-stage developer-facing
   startups](https://www.amazon.com/Developer-Facing-Startup-market-developer-facing/dp/B0D4KGHQML)
   by Adam Frankl
+- [(2023) Building Low Latency Applications with C++: Develop a complete low
+  latency trading ecosystem from scratch using modern
+  C++](https://www.amazon.com/Building-Low-Latency-Applications-ecosystem/dp/1837639353/)
+  by Sourav Ghosh
 - [(2023) Advanced Apple Debugging & Reverse Engineering, 4th
   Edition](https://www.kodeco.com/books/advanced-apple-debugging-reverse-engineering/v4.0)
   by Walter Tyree
