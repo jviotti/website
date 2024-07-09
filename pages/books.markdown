@@ -24,6 +24,10 @@ This is a list of books I read, sorted by publication date:
 - [(2022) Building macOS apps with SwiftUI: A Practical Learning
   Guide](https://www.amazon.com/Building-macOS-apps-SwiftUI-Practical-ebook/dp/B0BP5P9H31)
   by Grace Huang
+- [(2021) Real-Time C++: Efficient Object-Oriented and Template Microcontroller
+  Programming, 4th
+  edition](https://www.amazon.com/Real-Time-Efficient-Object-Oriented-Microcontroller-Programming/dp/366262995X)
+  by Christopher Kormanyos
 - [(2021) Windows 10 System Programming, Part
   1](https://leanpub.com/windows10systemprogramming) by Pavel Yosifovich
 - [(2021) Professional CMake: A Practical Guide, 11th
