@@ -19,6 +19,9 @@ This is a list of books I read, sorted by publication date:
 - [(2023) Naming Things: The Hardest Problem in Software
   Engineering](https://www.amazon.com/Naming-Things-Hardest-Software-Engineering-ebook/dp/B0BT15GFZG/)
   by Tom Benner
+- [(2022) A Concise Introduction to Robot Programming with
+  ROS2](https://www.amazon.com/Concise-Introduction-Robot-Programming-ROS2/dp/1032264659)
+  by Fracisco Martin Rico
 - [(2022) C++ Best Practices: 45ish Simple Rules with Specific Action Items for
   Better C++](https://leanpub.com/cppbestpractices)
 - [(2022) Building macOS apps with SwiftUI: A Practical Learning
