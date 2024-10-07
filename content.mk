@@ -1,5 +1,6 @@
 # Articles
 # Order is important for RSS feed generation purposes. Latest first.
+$(eval $(call ARTICLE,2024,10,08,running-the-intel-vtune-profiler-on-fedora))
 $(eval $(call ARTICLE,2024,05,09,debugging-msvc-cpp-crashes-from-the-terminal-using-cdb))
 $(eval $(call ARTICLE,2024,01,29,using-xcode-instruments-for-cpp-cpu-profiling))
 $(eval $(call ARTICLE,2024,01,05,is-objective-c-bool-a-boolean-type-it-depends))
@@ -137,3 +138,6 @@ $(eval $(call IMAGE,visual-studio-windows-sdk.png))
 $(eval $(call IMAGE,windows-cdb-to-path.png))
 $(eval $(call IMAGE,jsontoolkit-json-parse-abort.png))
 $(eval $(call IMAGE,cdb-example.png))
+$(eval $(call IMAGE,vtune-application-menu.png))
+$(eval $(call IMAGE,vtune-jsontoolkit-memory-access-prepare.png))
+$(eval $(call IMAGE,vtune-jsontoolkit-memory-access.png))
