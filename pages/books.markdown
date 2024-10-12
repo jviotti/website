@@ -27,6 +27,9 @@ This is a list of books I read, sorted by publication date:
 - [(2022) Building macOS apps with SwiftUI: A Practical Learning
   Guide](https://www.amazon.com/Building-macOS-apps-SwiftUI-Practical-ebook/dp/B0BP5P9H31)
   by Grace Huang
+- [(2021) Parallel and High Performance
+  Computing](https://www.amazon.com/Parallel-Performance-Computing-Robert-Robey/dp/1617296465)
+  by Robert Robey, Yuliana Zamora
 - [(2021) Real-Time C++: Efficient Object-Oriented and Template Microcontroller
   Programming, 4th
   edition](https://www.amazon.com/Real-Time-Efficient-Object-Oriented-Microcontroller-Programming/dp/366262995X)
