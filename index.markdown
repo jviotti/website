@@ -60,6 +60,7 @@ Research
 Videos
 ------
 
+- 2024 (Talk) [JSON Schema Conference 2024 - Applying software engineering practices to JSON Schemas](https://www.youtube.com/watch?v=wJ7bK22n3IU)
 - 2024 (Talk) [How to Crush Node.js Performance by Orders of Magnitude](https://youtu.be/UG_qLfxcZ3E?t=3713) ([Slides](https://drive.google.com/drive/u/0/folders/1aV-Kfoql6E2CGbmhZJNfHFJkk70QTH26))
 - 2024 (Webinar) [Demystifying Data Products](https://info.zeenea.com/demystifying-data-products-how-to-design-publish-and-share-data-products/)
 - 2024 (Live Stream) [DM Radio - All Together Now - Unified Analytics](https://www.youtube.com/watch?v=ne2fNU1iVPY)
