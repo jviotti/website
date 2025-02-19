@@ -12,6 +12,10 @@ This is a list of books I read, sorted by publication date:
   playbook for early-stage developer-facing
   startups](https://www.amazon.com/Developer-Facing-Startup-market-developer-facing/dp/B0D4KGHQML)
   by Adam Frankl
+- [(2023) SEO 2023 Learn Search Engine Optimization With Smart Internet
+  Marketing Strategies: Learn SEO with smart internet marketing
+  strategies](https://www.amazon.com/Search-Optimization-Internet-Marketing-Strategies/dp/B0BMPVL319)
+  by Adam Clarke
 - [(2023) Building Low Latency Applications with C++: Develop a complete low
   latency trading ecosystem from scratch using modern
   C++](https://www.amazon.com/Building-Low-Latency-Applications-ecosystem/dp/1837639353/)
