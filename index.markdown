@@ -50,6 +50,7 @@ Articles
 Research
 --------
 
+- 2025 (Paper) [Blaze: Compiling JSON Schema for 10x Faster Validation](https://arxiv.org/abs/2503.02770)
 - 2022 (Dissertation) [JSON BinPack: A space-efficient schema-driven and schema-less binary serialization specification based on JSON Schema](dissertation.pdf)
   - Awarded two 2022 CAR Hoare prizes for best performance
 - 2022 (Paper) [Benchmarking JSON BinPack](https://arxiv.org/abs/2211.12799)
