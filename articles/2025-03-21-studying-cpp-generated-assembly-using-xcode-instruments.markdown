@@ -63,7 +63,7 @@ Note that as of CMake 3.31, `RelWithDebInfo` defaults to a `-O2` optimisation
 level that differs from the `-O3` optimisation level chosen by the `Release`
 build type, which can lead to differences in the generated assembly. This can
 be overriden by manually specifying the `-DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O3
--g"` argument when configuring the project. 
+-g"` argument when configuring the project.
 
 > By default, CMake seems to prefer embedding debug symbols into the resulting
 > binary rather that extracting them into `*.dSYM` directories. The outcome is
@@ -107,7 +107,7 @@ $ git clone https://github.com/sourcemeta/core
 $ make -C core PRESET=RelWithDebInfo
 
 # Execute the benchmark case
-$ ./core/build/benchmark/sourcemeta_core_benchmark --benchmark_filter=JSON_Fast_Hash_Helm_Chart_Lock 
+$ ./core/build/benchmark/sourcemeta_core_benchmark --benchmark_filter=JSON_Fast_Hash_Helm_Chart_Lock
 ...
 -------------------------------------------------------------------------
 Benchmark                               Time             CPU   Iterations
@@ -121,7 +121,7 @@ Profiling the benchmark case with Xcode Instruments
 Let's run the `JSON_Fast_Hash_Helm_Chart_Lock` Google Benchmark case over Xcode
 Instruments using the `xctrace` command-line tool, store the profiling result
 as `output.trace`, and open the report using the Xcode Instruments graphical
-application. 
+application.
 
 ```sh
 $ xcrun xctrace record \
@@ -142,7 +142,7 @@ to run the benchmark case for at least 10 seconds. This is to give the Xcode
 Instruments sampler a chance to get more information about the program
 execution. While this is not strictly needed to analyse the generated assembly
 code, it lets Xcode Instruments highlight the specific assembly instructions
-that take more time to execute. 
+that take more time to execute.
 
 The Xcode Instruments "Interleave" view
 ---------------------------------------
@@ -162,8 +162,8 @@ information about the associated weight of invidual assembly instructions.
 
 ![Inspecting generated assembly using the "Interleave" view mode](../../../images/xcode-instruments-fasthash-interleave.png)
 
-Annex: Inspecting assembly using LLDB
--------------------------------------
+Annex: Interleaved disassembling using LLDB
+-------------------------------------------
 
 If a proprietary graphical desktop application like Xcode Instruments is not
 your cup of tea, you can also inspect generated assembly in an interleaved
