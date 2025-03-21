@@ -11,6 +11,7 @@ CMake, macOS, JSON Schema, software architecture, and data. Don't hesitate in
 Articles
 --------
 
+- 2025 [Studying C++ generated assembly using Xcode Instruments](2025/03/21/studying-cpp-generated-assembly-using-xcode-instruments.html)
 - 2024 [Running the Intel VTune Profiler on Fedora](2024/10/08/running-the-intel-vtune-profiler-on-fedora.html)
 - 2024 [Debugging MSVC C++ crashes from the terminal using CDB](2024/05/09/debugging-msvc-cpp-crashes-from-the-terminal-using-cdb.html)
 - 2024 [Using Xcode Instruments for C++ CPU profiling](2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html)

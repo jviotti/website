@@ -1,5 +1,6 @@
 # Articles
 # Order is important for RSS feed generation purposes. Latest first.
+$(eval $(call ARTICLE,2025,03,21,studying-cpp-generated-assembly-using-xcode-instruments))
 $(eval $(call ARTICLE,2024,10,08,running-the-intel-vtune-profiler-on-fedora))
 $(eval $(call ARTICLE,2024,05,09,debugging-msvc-cpp-crashes-from-the-terminal-using-cdb))
 $(eval $(call ARTICLE,2024,01,29,using-xcode-instruments-for-cpp-cpu-profiling))
@@ -141,3 +142,6 @@ $(eval $(call IMAGE,cdb-example.png))
 $(eval $(call IMAGE,vtune-application-menu.png))
 $(eval $(call IMAGE,vtune-jsontoolkit-memory-access-prepare.png))
 $(eval $(call IMAGE,vtune-jsontoolkit-memory-access.png))
+$(eval $(call IMAGE,xcode-relwithdebinfo.png))
+$(eval $(call IMAGE,xcode-instruments-fasthash-interleave.png))
+$(eval $(call IMAGE,xcode-instruments-fasthash-view-mode.png))
