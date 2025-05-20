@@ -43,6 +43,7 @@ Articles
 
 **External**
 
+- 2025 [Open Source Initiative Maintainer Story: Juan Cruz Viotti](https://opensource.org/maintainers/jviotti)
 - 2024 [Understanding JSON Schema Lexical and Dynamic Scopes](https://json-schema.org/blog/posts/understanding-lexical-dynamic-scopes)
 - 2023 [How Postman uses JSON Schema](https://blog.postman.com/how-postman-uses-json-schema/)
 - 2022 [How the W3C Web of Things brings JSON Schema to the Internet of Things](https://json-schema.org/blog/posts/w3c-wot-case-study)
