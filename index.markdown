@@ -43,6 +43,7 @@ Articles
 
 **External**
 
+- 2025 [Sourcemeta Revamps JSON Schema Management](https://thenewstack.io/sourcemeta-revamps-json-schema-management)
 - 2025 [Open Source Initiative Maintainer Story: Juan Cruz Viotti](https://opensource.org/maintainers/jviotti)
 - 2024 [Understanding JSON Schema Lexical and Dynamic Scopes](https://json-schema.org/blog/posts/understanding-lexical-dynamic-scopes)
 - 2023 [How Postman uses JSON Schema](https://blog.postman.com/how-postman-uses-json-schema/)
