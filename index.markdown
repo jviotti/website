@@ -43,6 +43,7 @@ Articles
 
 **External**
 
+- 2025 [Maintaine.rs, Unveiling the Open Source heroes that power our digital infrastructure: Juan Cruz Viotti](https://maintaine.rs/jviotti)
 - 2025 [Sourcemeta Revamps JSON Schema Management](https://thenewstack.io/sourcemeta-revamps-json-schema-management)
 - 2025 [Open Source Initiative Maintainer Story: Juan Cruz Viotti](https://opensource.org/maintainers/jviotti)
 - 2024 [Understanding JSON Schema Lexical and Dynamic Scopes](https://json-schema.org/blog/posts/understanding-lexical-dynamic-scopes)
