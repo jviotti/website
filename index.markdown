@@ -65,6 +65,7 @@ Research
 Media
 -----
 
+- 2025 (Talk) [JSON Schema Beyond Validation: What's Possible When Schemas Become Your Source of Truth (Gewiss Italia)](https://www.youtube.com/watch?v=TmCejVTq9-k)
 - 2025 (Talk) [Tyk LEAP 2.0: API governance starts with JSON schema here's why!](https://www.youtube.com/watch?v=zRr_hioU4zw)
 - 2025 (Interview) [API Evangelist Conversation With Juan Cruz Viotti of Sourcemeta About Schema Registries](https://www.youtube.com/watch?v=ED0cqxNqowk)
 - 2025 (Podcast) [Voxgig Fireside with Juan Cruz Viotti](https://www.voxgig.com/podcast/juan-cruz-viotti-founder-source-meta)
