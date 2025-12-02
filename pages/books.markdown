@@ -518,7 +518,7 @@ This is a list of books I read, sorted by publication date:
   by Daniel J. Velleman
 - [(2006) Getting Real: The Smarter, Faster, Easier Way to Build a Successful
   Web
-  Applicatio](https://www.amazon.com/Getting-Real-Smarter-Successful-Application/dp/0578012812)
+  Application](https://www.amazon.com/Getting-Real-Smarter-Successful-Application/dp/0578012812)
   by Jason Fried
 - [(2006) How to Become a Straight-A Student: The Unconventional Strategies
   Real College Students Use to Score High While Studying
