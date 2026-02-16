@@ -53,7 +53,7 @@ roles.
 For example, imagine that your company develops an application using a certain
 open-source framework. Sooner or later, your company will be interested in
 hiring software engineers that are intimately familiar with such framework.
-The natural way the find these people is to look for those involved in the
+The natural way to find these people is to look for those involved in the
 open-source project either as casual contributors or appointed members of its
 governance. When one of these software engineers joins your company, they will
 likely produce open-source contributions that are directly related to the
