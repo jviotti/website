@@ -139,6 +139,9 @@ This is a list of books I read, sorted by publication date:
 - [(2015) Practical Vim: Edit Text at the Speed of Thought, 2nd
   Edition](https://www.amazon.com/Practical-Vim-Edit-Speed-Thought/dp/1680501275)
   by Drew Neil
+- [(2014) Crossing the Chasm, 3rd
+  Edition](https://www.amazon.com/Crossing-Chasm-3rd-Disruptive-Mainstream/dp/0062292986)
+  by Geoffrey A. Moore
 - [(2014) Advanced C and C++
   Compiling](https://www.amazon.com/Advanced-C-Compiling-Milan-Stevanovic/dp/1430266678)
   by Milan Stevanovic
