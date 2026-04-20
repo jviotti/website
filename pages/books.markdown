@@ -5,6 +5,8 @@ description: The ever-growing list of books I read
 
 This is a list of books I read, sorted by publication date:
 
+- [(2026) Shift: The Playbook for Event-Driven Architecture
+  Advocacy](https://leadtheshift.co) By Fran Mendez
 - [(2024) Automating API Delivery: APIOps with
   OpenAPI](https://www.amazon.com/Automating-API-Delivery-APIOps-OpenAPI/dp/1633438783)
   by Ikenna Nwaiwu
