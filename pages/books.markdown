@@ -7,6 +7,10 @@ This is a list of books I read, sorted by publication date:
 
 - [(2026) Shift: The Playbook for Event-Driven Architecture
   Advocacy](https://leadtheshift.co) By Fran Mendez
+- [(2025) Crafting Great APIs with Domain-Driven Design: Collaborative
+  Craftsmanship of Asynchronous and Synchronous
+  APIs](https://www.amazon.com/Crafting-Great-APIs-Domain-Driven-Design/dp/B0DYNMWP67)
+  By Annegret Junker, Fabrizio Lazzaretti
 - [(2024) Automating API Delivery: APIOps with
   OpenAPI](https://www.amazon.com/Automating-API-Delivery-APIOps-OpenAPI/dp/1633438783)
   by Ikenna Nwaiwu
