@@ -43,6 +43,8 @@ Articles
 
 **External**
 
+- 2026 [The only schema language AI speaks is JSON Schema](https://www.sourcemeta.com/blog/ai-only-speaks-json-schema/)
+- 2026 [In 76% of modern OpenAPI specs, JSON Schema dominates the specification](https://www.sourcemeta.com/blog/json-schema-dominates-openapi/)
 - 2025 [Maintaine.rs, Unveiling the Open Source heroes that power our digital infrastructure: Juan Cruz Viotti](https://maintaine.rs/jviotti)
 - 2025 [Sourcemeta Revamps JSON Schema Management](https://thenewstack.io/sourcemeta-revamps-json-schema-management)
 - 2025 [Open Source Initiative Maintainer Story: Juan Cruz Viotti](https://opensource.org/maintainers/jviotti)
