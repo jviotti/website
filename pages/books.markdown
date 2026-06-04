@@ -32,6 +32,8 @@ This is a list of books I read, sorted by publication date:
 - [(2023) Naming Things: The Hardest Problem in Software
   Engineering](https://www.amazon.com/Naming-Things-Hardest-Software-Engineering-ebook/dp/B0BT15GFZG/)
   by Tom Benner
+- [(2022) The Network State: How To Start a New
+  Country](https://www.amazon.com/dp/B09VPKZR3G) by Balaji Srinivasan
 - [(2022) A Concise Introduction to Robot Programming with
   ROS2](https://www.amazon.com/Concise-Introduction-Robot-Programming-ROS2/dp/1032264659)
   by Fracisco Martin Rico
