@@ -5,9 +5,16 @@ description: The ever-growing list of books I read
 
 This is a list of books I read, sorted by publication date:
 
-- [(2026) Obviously Awesome: How to Nail Product Positioning so Customers Get it, Buy it, Love it](https://www.amazon.com/Obviously-Awesome-Product-Positioning-Customers/dp/1999023080) by April Dunford
+- [(2026) Obviously Awesome: How to Nail Product Positioning so Customers Get
+  it, Buy it, Love
+  it](https://www.amazon.com/Obviously-Awesome-Product-Positioning-Customers/dp/1999023080)
+  by April Dunford
 - [(2026) Shift: The Playbook for Event-Driven Architecture
   Advocacy](https://leadtheshift.co) By Fran Mendez
+- [(2025) Fundamentals of Metadata Management: Uncover the Meta Grid and Unlock
+  IT, Data, Information, and Knowledge
+  Management](https://www.amazon.com/Fundamentals-Metadata-Management-Information-Knowledge/dp/109816282X)
+  by Ole Olesen-Bagneux
 - [(2025) Crafting Great APIs with Domain-Driven Design: Collaborative
   Craftsmanship of Asynchronous and Synchronous
   APIs](https://www.amazon.com/Crafting-Great-APIs-Domain-Driven-Design/dp/B0DYNMWP67)
