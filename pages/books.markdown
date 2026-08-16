@@ -54,6 +54,10 @@ This is a list of books I read, sorted by publication date:
 - [(2022) Building macOS apps with SwiftUI: A Practical Learning
   Guide](https://www.amazon.com/Building-macOS-apps-SwiftUI-Practical-ebook/dp/B0BP5P9H31)
   by Grace Huang
+- [(2021) The Tech Contracts Handbook: Cloud Computing Agreements, Software
+  Licenses, and Other IT Contracts for Lawyers and Businesspeople, Third
+  Edition](https://www.amazon.com/Tech-Contracts-Handbook-Agreements-Businesspeople/dp/1641058536)
+  by David W. Tollen
 - [(2021) Nomad Capitalist: Reclaim Your Freedom with Offshore Companies, Dual
   Citizenship, Foreign Banks, and Overseas
   Investments](https://www.amazon.com/Nomad-Capitalist-Companies-Citizenship-Investments/dp/B09F16Q6G8)
