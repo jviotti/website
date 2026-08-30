@@ -5,6 +5,8 @@ description: The ever-growing list of books I read
 
 This is a list of books I read, sorted by publication date:
 
+- [(2026) Logic for Programmers](https://www.amazon.com/dp/B0HBLP4B26) by
+  Hillel Wayne
 - [(2026) Obviously Awesome: How to Nail Product Positioning so Customers Get
   it, Buy it, Love
   it](https://www.amazon.com/Obviously-Awesome-Product-Positioning-Customers/dp/1999023080)
