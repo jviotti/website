@@ -43,6 +43,8 @@ Articles
 
 **External**
 
+- 2026 [Fully solving JSON Schema and JSON-LD interoperability](https://www.sourcemeta.com/blog/json-schema-jsonld-interoperability/)
+- 2026 [Every G7 government already runs on JSON Schema](https://www.sourcemeta.com/blog/g7-runs-on-json-schema/)
 - 2026 [The only schema language AI speaks is JSON Schema](https://www.sourcemeta.com/blog/ai-only-speaks-json-schema/)
 - 2026 [In 76% of modern OpenAPI specs, JSON Schema dominates the specification](https://www.sourcemeta.com/blog/json-schema-dominates-openapi/)
 - 2025 [Maintaine.rs, Unveiling the Open Source heroes that power our digital infrastructure: Juan Cruz Viotti](https://maintaine.rs/jviotti)
