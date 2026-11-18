@@ -43,6 +43,7 @@ Articles
 
 **External**
 
+- 2026 [Solving the JSON Schema dialect fragmentation problem with auto-upgrades](https://www.sourcemeta.com/blog/json-schema-dialect-auto-upgrade/)
 - 2026 [Fully solving JSON Schema and JSON-LD interoperability](https://www.sourcemeta.com/blog/json-schema-jsonld-interoperability/)
 - 2026 [Every G7 government already runs on JSON Schema](https://www.sourcemeta.com/blog/g7-runs-on-json-schema/)
 - 2026 [The only schema language AI speaks is JSON Schema](https://www.sourcemeta.com/blog/ai-only-speaks-json-schema/)
